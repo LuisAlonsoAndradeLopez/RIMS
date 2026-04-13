@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1522/RIMS_USER_SERVER_DB
+    username: system
+    password: Orcl#11042026
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://login.microsoftonline.com/{tenant-id}/v2.0
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

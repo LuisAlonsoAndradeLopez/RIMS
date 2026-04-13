@@ -1,0 +1,12 @@
+com\luisalonso\userservice\mapper\UserMapper.class
+com\luisalonso\userservice\dto\CreateUserRequest.class
+com\luisalonso\userservice\entity\User$UserBuilder.class
+com\luisalonso\userservice\repository\UserRepository.class
+com\luisalonso\userservice\service\UserService.class
+com\luisalonso\userservice\exception\GlobalExceptionHandler.class
+com\luisalonso\userservice\App.class
+com\luisalonso\userservice\controller\UserController.class
+com\luisalonso\userservice\util\HtmlEncoderUtil.class
+com\luisalonso\userservice\entity\User.class
+com\luisalonso\userservice\security\SecurityConfig.class
+com\luisalonso\userservice\dto\UserDto.class
