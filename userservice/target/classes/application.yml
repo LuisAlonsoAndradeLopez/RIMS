@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1522/RIMS_USER_SERVER_DB
-    username: system
-    password: Orcl#11042026
+    url: jdbc:oracle:thin:@localhost:1522/ORCLPDB
+    username: RIMS_USER_SERVER_DB
+    password: Rims#12042026
     driver-class-name: oracle.jdbc.OracleDriver
 
   jpa:

@@ -12,7 +12,7 @@ public class ArchitectureTest {
     @ArchTest
     static final ArchRule layeredArchitectureRule = layeredArchitecture()
 
-            .consideringAllDependencies()
+            .consideringOnlyDependenciesInLayers()
 
             .layer("Controller")
             .definedBy("..controller..")
@@ -23,10 +23,25 @@ public class ArchitectureTest {
             .layer("Repository")
             .definedBy("..repository..")
 
+            .layer("Mapper")
+            .definedBy("..mapper..")
+
+            .layer("DTO")
+            .definedBy("..dto..")
+
+            .layer("Entity")
+            .definedBy("..entity..")
+
             .whereLayer("Controller")
-            .mayOnlyAccessLayers("Service")
+            .mayOnlyAccessLayers("Service", "DTO")
 
             .whereLayer("Service")
-            .mayOnlyAccessLayers("Repository");
+            .mayOnlyAccessLayers("Repository", "Mapper", "DTO")
+
+            .whereLayer("Mapper")
+            .mayOnlyAccessLayers("DTO", "Entity")
+
+            .whereLayer("Repository")
+            .mayOnlyAccessLayers("Entity");
 
 }
