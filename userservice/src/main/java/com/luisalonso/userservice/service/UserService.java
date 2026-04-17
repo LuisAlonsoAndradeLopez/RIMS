@@ -1,5 +1,8 @@
 package com.luisalonso.userservice.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.luisalonso.userservice.dto.UserDto;
@@ -16,22 +19,14 @@ public class UserService {
     private final UserRepository repository;
     private final UserMapper mapper;
 
-    public UserDto getUserByAzureId(String azureId) {
+    public List<UserDto> getUsers() {
+        List<User> users = repository.findAll();
+        List<UserDto> usersDto = new ArrayList<>();
 
-        User user = repository
-                .findByAzureId(azureId)
-                .orElseThrow(
-                        () -> new RuntimeException("User not found"));
+        for (User user : users) {
+            usersDto.add(mapper.toDto(user));
+        }
 
-        return mapper.toDto(user);
+        return (usersDto);
     }
-
-    public UserDto save(UserDto dto) {
-
-        User entity = mapper.toEntity(dto);
-
-        return mapper.toDto(
-                repository.save(entity));
-    }
-
 }

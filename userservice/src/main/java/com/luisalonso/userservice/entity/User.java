@@ -5,7 +5,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Column;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,15 +23,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
-    private String azureId;
-
     private String email;
 
     private String name;
-
-    private String department;
-
-    private String jobTitle;
-
 }

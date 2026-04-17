@@ -1,5 +1,8 @@
 {
-  "cSpell.words": ["luisalonso"],
-  "workbench.colorTheme": "Vue Theme",
+  "cSpell.words": [
+    "luisalonso",
+    "msal"
+  ],
+  "workbench.colorTheme": "Bluloco Dark",
   "java.configuration.updateBuildConfiguration": "interactive"
 }

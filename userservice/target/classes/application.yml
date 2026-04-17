@@ -19,7 +19,7 @@ spring:
         jwt:
           issuer-uri: https://login.microsoftonline.com/ebecc4e4-d876-48e1-848a-880f6d71bdad/v2.0
           audiences:
-            - api://73966a65-f6dc-46f5-b554-8c84028613f8
+            - 73966a65-f6dc-46f5-b554-8c84028613f8
 
 management:
   endpoints:

@@ -22,17 +22,16 @@ public class SecurityConfig {
             HttpSecurity http) throws Exception {
 
         http
-                .cors(withDefaults()) // ⭐ IMPORTANT
+                .cors(withDefaults())
                 .csrf(csrf -> csrf.disable())
 
                 .authorizeHttpRequests(auth -> auth
 
-                        // ⭐ Allow preflight requests
                         .requestMatchers(HttpMethod.OPTIONS, "/**")
                         .permitAll()
 
                         .requestMatchers("/api/users")
-                        .authenticated()
+                        .hasAuthority("SCOPE_user-access")
 
                         .anyRequest()
                         .permitAll())

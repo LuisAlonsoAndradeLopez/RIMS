@@ -21,7 +21,7 @@ export function MSALInstanceFactory() {
     auth: {
       clientId: 'd25f3483-ca1b-44e3-b398-03dda592d50c',
 
-      authority: 'https://login.microsoftonline.com/ebecc4e4-d876-48e1-848a-880f6d71bdad',
+      authority: 'https://login.microsoftonline.com/ebecc4e4-d876-48e1-848a-880f6d71bdad/v2.0',
 
       redirectUri: 'http://localhost:4200',
     },
@@ -78,7 +78,6 @@ export const appConfig: ApplicationConfig = {
     MsalService,
     MsalGuard,
 
-    // ⭐ CRITICAL FIX
     {
       provide: HTTP_INTERCEPTORS,
       useClass: MsalInterceptor,

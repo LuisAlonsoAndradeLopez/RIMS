@@ -17,18 +17,14 @@ export class App implements OnInit {
   private http = inject(HttpClient);
 
   async ngOnInit() {
-    // Initialize MSAL
     await this.msalService.instance.initialize();
 
-    // Handle login redirect
     const result = await this.msalService.instance.handleRedirectPromise();
 
     if (result?.account) {
-      // Set active account from redirect
       this.msalService.instance.setActiveAccount(result.account);
     }
 
-    // Restore existing session
     this.restoreUser();
   }
 
@@ -65,7 +61,7 @@ export class App implements OnInit {
     this.msalService.logoutRedirect();
   }
 
-  callApi() {
+  async callApi() {
     const account = this.msalService.instance.getActiveAccount();
 
     if (!account) {
@@ -73,14 +69,27 @@ export class App implements OnInit {
       return;
     }
 
-    this.http.get('http://localhost:8081/api/users').subscribe({
-      next: (response) => {
-        console.log('API Response:', response);
-      },
+    try {
+      const result = await this.msalService.instance.acquireTokenSilent({
+        account: account,
+        scopes: ['api://73966a65-f6dc-46f5-b554-8c84028613f8/user-access'],
+      });
 
-      error: (error) => {
-        console.error('API Error:', error);
-      },
-    });
+      const headers = {
+        Authorization: `Bearer ${result.accessToken}`,
+      };
+
+      this.http.get('http://localhost:8081/api/users', { headers }).subscribe({
+        next: (response) => {
+          console.log('API Response:', response);
+        },
+
+        error: (error) => {
+          console.error('API Error:', error);
+        },
+      });
+    } catch (error) {
+      console.error('Token Error:', error);
+    }
   }
 }
