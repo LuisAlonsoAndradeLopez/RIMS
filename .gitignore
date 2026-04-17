@@ -1,0 +1,139 @@
+# =========================
+
+# OS Files
+
+# =========================
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+
+# Node / Angular
+
+# =========================
+
+node_modules/
+dist/
+.tmp/
+out-tsc/
+.angular/
+.cache/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Angular environment files (optional — keep if sensitive)
+
+src/environments/environment*.ts
+
+# =========================
+
+# Java / Spring Boot
+
+# =========================
+
+target/
+build/
+bin/
+
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+
+*.log
+
+# Maven
+
+.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+
+# IDE Files
+
+# =========================
+
+# IntelliJ
+
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+
+.project
+.classpath
+.settings/
+
+# VS Code
+
+.vscode/
+
+# =========================
+
+# Test Outputs
+
+# =========================
+
+coverage/
+test-results/
+
+# =========================
+
+# Database / Local Files
+
+# =========================
+
+*.db
+*.sqlite
+*.h2.db
+
+# =========================
+
+# Environment / Secrets
+
+# =========================
+
+.env
+.env.local
+.env.*.local
+
+# =========================
+
+# Spring Boot Specific
+
+# =========================
+
+application-local.yml
+application-dev.yml
+
+# =========================
+
+# Temporary Files
+
+# =========================
+
+*.tmp
+*.swp
+*.swo
+
+# =========================
+
+# Angular Cache
+
+# =========================
+
+.angular/cache/
+
+# =========================
+
+# Mac/Linux Hidden Files
+
+# =========================
+
+._*

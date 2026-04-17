@@ -9,5 +9,4 @@ com\luisalonso\userservice\App.class
 com\luisalonso\userservice\controller\UserController.class
 com\luisalonso\userservice\util\HtmlEncoderUtil.class
 com\luisalonso\userservice\entity\User.class
-com\luisalonso\userservice\security\SecurityConfig.class
 com\luisalonso\userservice\dto\UserDto.class

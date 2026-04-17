@@ -11,4 +11,4 @@ ALTER USER RIMS_USER_SERVER_DB QUOTA UNLIMITED ON USERS;
 mvn spring-boot:run -DskipTests
 
 TODO:
-Understand OAuth2, Microsoft Entra ID / Azure ID, PWASP Encoder, 
+Understand OAuth2, Microsoft Entra ID / Azure ID, OWASP Encoder, 

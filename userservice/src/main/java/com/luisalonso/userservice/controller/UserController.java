@@ -1,41 +1,20 @@
 package com.luisalonso.userservice.controller;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.luisalonso.userservice.dto.UserDto;
-import com.luisalonso.userservice.service.UserService;
-
-import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/users")
-@RequiredArgsConstructor
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
 
-    private final UserService service;
-
-    @GetMapping("/me")
-    public ResponseEntity<UserDto> me(
+    @GetMapping("/users")
+    public String getUsers(
             @AuthenticationPrincipal Jwt jwt) {
 
-        String azureId = jwt.getSubject();
+        String email = jwt.getClaimAsString("preferred_username");
 
-        return ResponseEntity.ok(
-                service.getUserByAzureId(azureId));
+        return "Hello " + email;
     }
-
-    @PreAuthorize("hasAuthority('GROUP_ADMIN')")
-    @GetMapping("/admin")
-    public String adminOnly() {
-
-        return "admin access";
-
-    }
-
 }

@@ -1,4 +1,6 @@
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\App.java
+C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\config\SecurityConfig.java
+C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\controller\TestController.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\controller\UserController.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\dto\CreateUserRequest.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\dto\UserDto.java
@@ -6,6 +8,5 @@ C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservi
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\exception\GlobalExceptionHandler.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\mapper\UserMapper.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\repository\UserRepository.java
-C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\security\SecurityConfig.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\service\UserService.java
 C:\Users\wmike\Documents\RIMS\userservice\src\main\java\com\luisalonso\userservice\util\HtmlEncoderUtil.java
