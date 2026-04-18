@@ -20,13 +20,6 @@ public class UserService {
     private final UserMapper mapper;
 
     public List<UserDto> getUsers() {
-        List<User> users = repository.findAll();
-        List<UserDto> usersDto = new ArrayList<>();
-
-        for (User user : users) {
-            usersDto.add(mapper.toDto(user));
-        }
-
-        return (usersDto);
+        return mapper.toDtoList(repository.findAll());
     }
 }

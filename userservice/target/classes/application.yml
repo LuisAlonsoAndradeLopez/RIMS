@@ -9,8 +9,9 @@ spring:
     driver-class-name: oracle.jdbc.OracleDriver
 
   jpa:
+    database-platform: org.hibernate.dialect.OracleDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
     show-sql: true
 
   security:
